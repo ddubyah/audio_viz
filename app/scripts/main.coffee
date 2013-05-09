@@ -4,6 +4,7 @@ require.config
     sketch: "../components/sketch.js/js/sketch.min"
     bootstrap: "vendor/bootstrap"
     dancer: "vendor/dancer.min"
+    underscore: "../components/underscore/underscore-min"
 
   shim:
     bootstrap:
@@ -16,7 +17,10 @@ require.config
     sketch: 
       exports: "Sketch"
 
-require ["viz", "jquery", "dancer", "bootstrap"], (Viz, $, Dancer) ->
+    underscore:
+      exports: "_"
+
+require ["viz", "jquery", "dancer", "underscore", "bootstrap"], (Viz, $, _, Dancer) ->
   "use strict"
   
   $ ->
